@@ -12,11 +12,11 @@ function player(x,y,z,rx,ry){
 
 //rectangle Array [x,y,z,rx,ry,rz,w,h,color]
 var map = [
-    [0,0,-1000,0,0,0,2000,200,"#F0C0FF"],  // front wall
-    [0,0,1000,0,180,0,2000,200,"#F0C0FF"], // back wall (obrócona 180)
-    [1000,0,0,0,-90,0,2000,200,"#F0C0FF"], // right wall
-    [-1000,0,0,0,90,0,2000,200,"#F0C0FF"], // left wall
-    [0,100,0,90,0,0,2000,2000,"#666666"],  // floor
+    [0,0,-1000,0,0,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"],  // front wall
+    [0,0,1000,0,180,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // back wall (obrócona 180)
+    [1000,0,0,0,-90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // right wall
+    [-1000,0,0,0,90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // left wall
+    [0,100,0,90,0,0,2000,2000,"patterns/plank_flooring_04_diff_1k.jpg"],  // floor
 ];
 
 //variables for movement 
@@ -126,6 +126,7 @@ function createNewWorld(){
         newElement.style.width = map[i][6] + "px";
         newElement.style.height = map[i][7] + "px";
         newElement.style.background = map[i][8];
+        newElement.style.backgroundImage = "url("+ map[i][8] +")";
 
         //position
         newElement.style.transform = "translate3d(" 
