@@ -34,16 +34,16 @@ document.addEventListener('pointerlockchange', (event) =>{
 })
 //if the key is pressed 
 document.addEventListener("keydown", (event) => {
-    if (event.key == "w"){
+    if (event.key == "w" || event.key == "ArrowUp"){
         PressForward = 1;
     }
-    if (event.key == "s"){
+    if (event.key == "s" || event.key == "ArrowDown"){
         PressBack = 1;
     }
-    if (event.key == "d"){
+    if (event.key == "d" || event.key == "ArrowRight"){
         PressRight = 1;
     }
-    if (event.key == "a"){
+    if (event.key == "a" || event.key == "ArrowLeft"){
         PressLeft = 1;
     }
     if (event.key == " "){
@@ -53,45 +53,23 @@ document.addEventListener("keydown", (event) => {
 
 //if the key is relealised 
 document.addEventListener("keyup", (event) =>{
-    if (event.key == "w"){
+    if (event.key == "w" || event.key == "ArrowUp"){
         PressForward = 0;
     }
-    if (event.key == "s"){
+    if (event.key == "s" || event.key == "ArrowDown"){
         PressBack = 0;
     }
-    if (event.key == "d"){
+    if (event.key == "d" || event.key == "ArrowRight"){
         PressRight = 0;
     }
-    if (event.key == "a"){
+    if (event.key == "a" || event.key == "ArrowLeft"){
         PressLeft = 0;
     }
     if (event.key == " "){
         PressUp = 0;
     }
 })
-document.addEventListener("keydown", function(event) {
-         if (event.key == "ArrowLeft"){
-            PressLeft = 1;
-         } else if (event.key == "ArrowUp"){
-            PressForward = 1;
-         } else if (event.key == "ArrowRight"){
-            PressRight = 1;
-         } else if (event.key == "ArrowDown"){
-            PressBack = 1;
-         }
-      });
 
-document.addEventListener("keyup", function(event) {
-         if (event.key == "ArrowLeft"){
-            PressLeft = 0;
-         } else if (event.key == "ArrowUp"){
-            PressForward = 0;
-         } else if (event.key == "ArrowRight"){
-            PressRight = 0;
-         } else if (event.key == "ArrowDown"){
-            PressBack = 0;
-         }
-      });
     
 // mouse movement listener 
 document.addEventListener("mousemove", (event) =>{
