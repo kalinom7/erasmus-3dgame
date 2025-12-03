@@ -10,6 +10,15 @@ function player(x,y,z,rx,ry){
     this.ry = ry;
 }
 
+//rectangle Array [x,y,z,rx,ry,rz,w,h,color]
+var map = [
+    [0,0,-1000,0,0,0,2000,200,"#F0C0FF"],  // front wall
+    [0,0,1000,0,180,0,2000,200,"#F0C0FF"], // back wall (obrócona 180)
+    [1000,0,0,0,-90,0,2000,200,"#F0C0FF"], // right wall
+    [-1000,0,0,0,90,0,2000,200,"#F0C0FF"], // left wall
+    [0,100,0,90,0,0,2000,2000,"#666666"],  // floor
+];
+
 //variables for movement 
 var PressLeft = 0;
 var PressRight = 0;
@@ -106,5 +115,33 @@ function update(){
         "rotateY(" + (-pawn.ry) + "deg)" +
         "translate3d(" + (-pawn.x) +"px," + (-pawn.y) + "px," + (-pawn.z) + "px)";
 }
+
+function createNewWorld(){
+    for (let i = 0; i < map.length; i++){
+
+        //create rectangles and styles
+        let newElement = document.createElement("div");
+        newElement.className = "square";
+        newElement.id = "square" + i;
+        newElement.style.width = map[i][6] + "px";
+        newElement.style.height = map[i][7] + "px";
+        newElement.style.background = map[i][8];
+
+        //position
+        newElement.style.transform = "translate3d(" 
+        + (600 - map[i][6]/2 + map[i][0]) + "px," 
+        + (400 -map[i][7]/2 + map[i][1]) + "px," 
+        + map[i][2] + "px)"
+        +"rotateX(" + map[i][3] + "deg)"
+        +"rotateY(" + map[i][4] + "deg)"
+        +"rotateZ(" + map[i][5] + "deg)";
+
+        //insert into the world
+        world.append(newElement);
+    }
+}
+
+//generate new world
+createNewWorld();
 
 TimerGame = setInterval(update, 10);
