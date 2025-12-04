@@ -1,10 +1,18 @@
 //variables for navigation
 
 var mainMenu = document.getElementById("mainMenu");
+
 var controlsMenu = document.getElementById("controlsMenu");
+
 var startGameButton = document.getElementById("startGameButton");
+
 var controlsMenuButton = document.getElementById("controlsMenuButton");
-var backButton = document.getElementById("backButton");
+var backButtonControls = document.getElementById("backButtonControls");
+
+var rulesMenu = document.getElementById("rulesMenu");
+var rulesMenuButton = document.getElementById("rulesMenuButton");
+var backButtonRules = document.getElementById("backButtonRules")
+
 var clickSound = new Audio;
 clickSound.src = "sounds/clicksound.mp3";
 
@@ -19,12 +27,28 @@ startGameButton.onclick = function(){
 }
 controlsMenuButton.onclick = function(){
     clickSound.play();
+
     mainMenu.style.display = "none";
     controlsMenu.style.display = "block";
 }
 
-backButton.onclick = function(){
+rulesMenuButton.onclick = function(){
     clickSound.play();
+
+    mainMenu.style.display = "none";
+    rulesMenu.style.display = "block";
+}
+
+backButtonRules.onclick = function(){
+    clickSound.play();
+
+    rulesMenu.style.display = "none"
+    mainMenu.style.display = "block";
+}
+
+backButtonControls.onclick = function(){
+    clickSound.play();
+
     controlsMenu.style.display = "none";
     mainMenu.style.display = "block";
 }

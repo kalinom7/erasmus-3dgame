@@ -53,8 +53,13 @@
   left: 150px;
 }
 
-#backButton {
-  top: 651px;
+#backButtonControls {
+  top: 450px;
+  left: 150px;
+}
+
+#backButtonRules {
+  top: 450px;
   left: 150px;
 }
 
@@ -68,6 +73,19 @@
   transform: translate(-50%, -50%);
 }
 
+#rules-block {
+  position: absolute;
+  font-family: "Bitcount Prop Double Ink";
+  font-size: 50px;
+  margin: 0px;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#rules-block p {
+  font-size: 200%;
+}
+
 .button p {
   position: absolute;
   font-family: "Bitcount Prop Double Ink";
@@ -78,7 +96,14 @@
   transform: translate(-50%, -50%);
 }
 
-#backButton p {
+#backButtonControls p {
+  font-size: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#backButtonRules p {
   font-size: 60px;
   top: 50%;
   left: 50%;
