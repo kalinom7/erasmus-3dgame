@@ -1,30 +1,30 @@
 //variables for navigation
 
-var menu1 = document.getElementById("menu1");
-var menu2 = document.getElementById("menu2");
-var button1 = document.getElementById("button1");
-var button2 = document.getElementById("button2");
-var button3 = document.getElementById("button3");
+var mainMenu = document.getElementById("mainMenu");
+var controlsMenu = document.getElementById("controlsMenu");
+var startGameButton = document.getElementById("startGameButton");
+var controlsMenuButton = document.getElementById("controlsMenuButton");
+var backButton = document.getElementById("backButton");
 var clickSound = new Audio;
 clickSound.src = "sounds/clicksound.mp3";
 
 //create navigation
-button1.onclick = function(){
+startGameButton.onclick = function(){
     clickSound.play();
-    menu1.style.display = "none";
+    mainMenu.style.display = "none";
 
     createNewWorld();
     TimerGame = setInterval(update, 10);
     canlock = true;
 }
-button2.onclick = function(){
+controlsMenuButton.onclick = function(){
     clickSound.play();
-    menu1.style.display = "none";
-    menu2.style.display = "block";
+    mainMenu.style.display = "none";
+    controlsMenu.style.display = "block";
 }
 
-button3.onclick = function(){
+backButton.onclick = function(){
     clickSound.play();
-    menu2.style.display = "none";
-    menu1.style.display = "block";
+    controlsMenu.style.display = "none";
+    mainMenu.style.display = "block";
 }

@@ -6,20 +6,23 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <div id="world"></div>
-        <div id ="menu1" class="menu" style="display:block">
-            <div id = "button1" class="button">
+        <div id ="mainMenu" class="menu" style="display:block">
+            <div id = "startGameButton" class="button">
                 <p>Start Game</p>
             </div>
-            <div id = "button2" class="button">
+            <div id = "controlsMenuButton" class="button">
                 <p>Instructions</p>
             </div>
+            <div id = "rulesMenuButton" class="button">
+                <p>Rules</p>
+            </div>
         </div>
-        <div id = "menu2" class="menu">
+        <div id = "controlsMenu" class="menu">
             <p>
                 <strong>Control keys</strong><br>
                 W - Move Forward<br>
@@ -29,10 +32,11 @@
                 Space - Jump<br>
 
             </p>
-            <div id= "button3" class="button">
+            <div id= "backButton" class="button">
                 <p>Back</p>
             </div>
         </div> 
+        <div id = "rulesMenu" class="menu"></div>
     </div>
 </body>
 </html>

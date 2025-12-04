@@ -29,7 +29,7 @@
 .button {
   position: absolute;
   width: 900px;
-  height: 250px;
+  height: 50px;
   background-color: orange;
   cursor: pointer;
 }
@@ -38,22 +38,27 @@
   background-color: yellow;
 }
 
-#button1 {
+#startGameButton {
   top: 100px;
   left: 150px;
 }
 
-#button2 {
+#controlsMenuButton {
+  top: 275px;
+  left: 150px;
+}
+
+#rulesMenuButton {
+  top: 537.5px;
+  left: 150px;
+}
+
+#backButton {
   top: 450px;
   left: 150px;
 }
 
-#button3 {
-  top: 450px;
-  left: 150px;
-}
-
-#menu2 p {
+#controlsMenu p {
   position: absolute;
   font-family: "Bitcount Prop Double Ink";
   font-size: 50px;
@@ -73,7 +78,7 @@
   transform: translate(-50%, -50%);
 }
 
-#button3 p {
+#backButton p {
   font-size: 60px;
   top: 50%;
   left: 50%;
