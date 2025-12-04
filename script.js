@@ -11,13 +11,18 @@ function player(x,y,z,rx,ry){
 }
 
 //rectangle Array [x,y,z,rx,ry,rz,w,h,color]
-var map = [
+const map = [
     [0,0,-1000,0,0,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"],  // front wall
+    
     [0,0,1000,0,180,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // back wall (obrócona 180)
+    
     [1000,0,0,0,-90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // right wall
+    
     [-1000,0,0,0,90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // left wall
+    
     [0,100,0,90,0,0,2000,2000,"patterns/plank_flooring_04_diff_1k.jpg"],  // floor
-    [0,0,-1000,0,0,0,80,180,"patterns/door.png"], //door on front wall
+    
+    [0,20,-1000,0,0,0,80,180,"patterns/door.png"], //door on front wall
     [1000,50,0,0,-90,0,360,360,"patterns/window.png"], //window on right wall
     
 
