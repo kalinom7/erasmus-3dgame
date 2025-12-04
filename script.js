@@ -75,13 +75,14 @@ var PressUp = 0;
 var MouseX = 0;
 var MouseY = 0;
 var lock = false;
+var canlock = false;
 
 //link variable to container
 var container = document.getElementById("container");
 //if the mouse is pressed
 
 container.onclick = function(){
-    container.requestPointerLock();
+    if(canlock) container.requestPointerLock();
 }
 
 //locked mouse listener
