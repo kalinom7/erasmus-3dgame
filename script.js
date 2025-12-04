@@ -190,8 +190,3 @@ function createNewWorld(){
         world.append(newElement);
     }
 }
-
-//generate new world
-createNewWorld();
-
-TimerGame = setInterval(update, 10);

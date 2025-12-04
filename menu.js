@@ -7,6 +7,13 @@ var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
 
 //create navigation
+button1.onclick = function(){
+    menu1.style.display = "none";
+
+    createNewWorld();
+    TimerGame = setInterval(update, 10);
+    canlock = true;
+}
 button2.onclick = function(){
     menu1.style.display = "none";
     menu2.style.display = "block";
