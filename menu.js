@@ -5,9 +5,12 @@ var menu2 = document.getElementById("menu2");
 var button1 = document.getElementById("button1");
 var button2 = document.getElementById("button2");
 var button3 = document.getElementById("button3");
+var clickSound = new Audio;
+clickSound.src = "sounds/clicksound.mp3";
 
 //create navigation
 button1.onclick = function(){
+    clickSound.play();
     menu1.style.display = "none";
 
     createNewWorld();
@@ -15,11 +18,13 @@ button1.onclick = function(){
     canlock = true;
 }
 button2.onclick = function(){
+    clickSound.play();
     menu1.style.display = "none";
     menu2.style.display = "block";
 }
 
 button3.onclick = function(){
+    clickSound.play();
     menu2.style.display = "none";
     menu1.style.display = "block";
 }

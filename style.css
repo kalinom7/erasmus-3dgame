@@ -52,3 +52,30 @@
   top: 450px;
   left: 150px;
 }
+
+#menu2 p {
+  position: absolute;
+  font-family: "Bitcount Prop Double Ink";
+  font-size: 50px;
+  margin: 0px;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button p {
+  position: absolute;
+  font-family: "Bitcount Prop Double Ink";
+  font-size: 60px;
+  margin: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#button3 p {
+  font-size: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
