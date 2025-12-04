@@ -29,7 +29,7 @@
 .button {
   position: absolute;
   width: 900px;
-  height: 50px;
+  height: 150px;
   background-color: orange;
   cursor: pointer;
 }
@@ -39,22 +39,22 @@
 }
 
 #startGameButton {
-  top: 100px;
+  top: 150px;
   left: 150px;
 }
 
 #controlsMenuButton {
-  top: 275px;
+  top: 316px;
   left: 150px;
 }
 
 #rulesMenuButton {
-  top: 537.5px;
+  top: 484px;
   left: 150px;
 }
 
 #backButton {
-  top: 450px;
+  top: 651px;
   left: 150px;
 }
 
