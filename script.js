@@ -1,3 +1,5 @@
+
+
 //world constant 
 var deg = Math.PI/180;
 
@@ -9,62 +11,6 @@ function player(x,y,z,rx,ry){
     this.rx = rx;
     this.ry = ry;
 }
-
-//rectangle Array [x,y,z,rx,ry,rz,w,h,color]
-const map = [
-    [0,0,-1000,0,0,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"],  // front wall
-    
-    [0,0,1000,0,180,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // back wall (obrócona 180)
-    
-    [1000,0,0,0,-90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // right wall
-    
-    [-1000,0,0,0,90,0,2000,200,"patterns/brick_crosswalk_diff_1k.jpg"], // left wall
-    
-    [0,100,0,90,0,0,2000,2000,"patterns/plank_flooring_04_diff_1k.jpg"],  // floor
-    
-    [0,20,-1000,0,0,0,80,180,"patterns/door.png"], //door on front wall
-    [1000,50,0,0,-90,0,360,360,"patterns/window.png"], //window on right wall
-    
-
-// left vertical long
-[ -700, 0, 300, 0, 90, 0, 600, 200, "#0077ff" ],
-
-// top long horizontal
-[ 0, 0, -600, 0, 0, 0, 900, 200, "#0077ff" ],
-
-// right small top
-[ 700, 0, -300, 0, 0, 0, 150, 200, "#0077ff" ],
-
-// mid tall left
-[ -200, 0, -200, 0, 90, 0, 400, 200, "#0077ff" ],
-
-// middle small horizontal
-[ 150, 0, -100, 0, 0, 0, 350, 200, "#0077ff" ],
-
-// right vertical long
-[ 600, 0, 50, 0, 90, 0, 450, 200, "#0077ff" ],
-
-// bottom right horizontal
-[ 400, 0, 350, 0, 0, 0, 600, 200, "#0077ff" ],
-
-// bottom left horizontal
-[ -400, 0, 350, 0, 0, 0, 400, 200, "#0077ff" ],
-
-// small vertical bottom left
-[ -450, 0, 50, 0, 90, 0, 250, 200, "#0077ff" ],
-
-// lower middle vertical
-[ 50, 0, 200, 0, 90, 0, 250, 200, "#0077ff" ],
-
-// next to back wall
-[500,0,700,0,180,0,700,200,"#0077ff"],
-[-400,0,600,0,180,0,300,200,"#0077ff"],
-[-100,0,500,0,90,0,700,200,"#0077ff"],
- [-600,0,-300,0,0,0,600,200,"#0077ff"],
-
-
-    
-];
 
 //variables for movement 
 var PressLeft = 0;
@@ -92,19 +38,19 @@ document.addEventListener('pointerlockchange', (event) =>{
 //if the key is pressed 
 document.addEventListener("keydown", (event) => {
     if (event.key == "w" || event.key == "ArrowUp"){
-        PressForward = 1;
+        PressForward = 5;
     }
     if (event.key == "s" || event.key == "ArrowDown"){
-        PressBack = 1;
+        PressBack = 5;
     }
     if (event.key == "d" || event.key == "ArrowRight"){
-        PressRight = 1;
+        PressRight = 5;
     }
     if (event.key == "a" || event.key == "ArrowLeft"){
-        PressLeft = 1;
+        PressLeft = 5;
     }
     if (event.key == " "){
-        PressUp = 1;
+        PressUp = 5;
     }
 })
 
@@ -165,26 +111,30 @@ function update(){
 }
 
 function createNewWorld(){
-    for (let i = 0; i < map.length; i++){
+   CreateSquares(map, "map");
+}
+
+function CreateSquares(squares, name){
+     for (let i = 0; i < squares.length; i++){
 
         //create rectangles and styles
         let newElement = document.createElement("div");
-        newElement.className = "square";
+        newElement.className = name + " square";
         newElement.id = "square" + i;
-        newElement.style.width = map[i][6] + "px";
-        newElement.style.height = map[i][7] + "px";
-        newElement.style.background = map[i][8];
-        newElement.style.backgroundImage = "url("+ map[i][8] +")";
+        newElement.style.width = squares[i][6] + "px";
+        newElement.style.height = squares[i][7] + "px";
+        newElement.style.background = squares[i][8];
+        newElement.style.backgroundImage = "url("+ squares[i][8] +")";
         
 
         //position
         newElement.style.transform = "translate3d(" 
-        + (600 - map[i][6]/2 + map[i][0]) + "px," 
-        + (400 -map[i][7]/2 + map[i][1]) + "px," 
-        + map[i][2] + "px)"
-        +"rotateX(" + map[i][3] + "deg)"
-        +"rotateY(" + map[i][4] + "deg)"
-        +"rotateZ(" + map[i][5] + "deg)";
+        + (600 - squares[i][6]/2 + squares[i][0]) + "px," 
+        + (400 -squares[i][7]/2 + squares[i][1]) + "px," 
+        + squares[i][2] + "px)"
+        +"rotateX(" + squares[i][3] + "deg)"
+        +"rotateY(" + squares[i][4] + "deg)"
+        +"rotateZ(" + squares[i][5] + "deg)";
 
         //insert into the world
         world.append(newElement);
